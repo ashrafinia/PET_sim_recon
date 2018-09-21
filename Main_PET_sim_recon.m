@@ -1,7 +1,10 @@
 % Please read all the following information carefully. 
 % 
-% This framework simulates a 2D PET PSF-based reconstruction. 
-% This code reconstructs both Noisy and Noise-Free.
+% This framework performs a 2D simulation of PET data with and without
+% noise, using analytical modeling of various image degradation effects.   
+% It also performs image reconstruction, and has an option for point-spread
+% function (PSF) modeling, also knows as PSF modeling, as described below.
+% (Please note RM in this code refers to resolution- or PSF modeling.)
 % 
 % This file requires an input true image "ImgTrue", and in case of modeling
 % attenuation, it requires an attenumation map "Mu_Map.mat", and in case of
@@ -12,8 +15,8 @@
 % 
 % The true image should be called from a function or loaded from a 
 % variable at the following section below in this code: 
-% "%% Load Reference True Image" in line 98 or 
-% "%% Generate True Image" in line 242. Some examples are included in this
+% "%% Load Reference True Image" in line 99 or 
+% "%% Generate True Image" in line 243. Some examples are included in this
 % line, such as a NEMA phantom generator. 
 % 
 % The size of Mu_Map should be in correspondence with the reconstruction 
@@ -57,7 +60,7 @@
 % -------------------------------------------------------------------------
 % STATEMENT:
 % This file is part of PET Recon Package by Saeed Ashrafinia, Rahmimlab.com
-% --> Copyright (C) 2013-2017  Saeed Ashrafinia, Johns Hopkins University
+% --> Copyright (C) 2013-2018  Saeed Ashrafinia, Johns Hopkins University
 % 
 %    This package is distributed in the hope that it will be useful,
 %    but WITHOUT ANY WARRANTY; without even the implied warranty of
